@@ -125,7 +125,7 @@ router.get('/title3',async(req,res)=>{
     }
 
     const promises = addresses.map(address => {
-      if (!/^http?:\/\//i.test(address)) {
+      if (!address.includes('http')) {
         address = 'http://' + address;
       }
       return new Promise((resolve, reject) => {
